@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchAndProcessData, DashboardData, DepartmentStats } from './dataUtils';
 import Dashboard from './Dashboard';
 import DepartmentDetails from './DepartmentDetails';
-import { LayoutDashboard, Loader2, RefreshCcw, Database } from 'lucide-react';
+import { LayoutDashboard, Loader2, RefreshCcw } from 'lucide-react';
 
 const App: React.FC = () => {
   const [data, setData] = useState<DashboardData | null>(null);
@@ -33,15 +33,17 @@ const App: React.FC = () => {
       {/* Navigation / Header */}
       <header className="bg-white shadow-sm sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="bg-indigo-600 p-2 rounded-lg">
-              <Database className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold tracking-tight text-slate-900">ERP Tracker</h1>
-              <p className="text-xs text-slate-500 font-medium flex items-center gap-1">
+          <div className="flex items-center space-x-4">
+            <img 
+              src="https://static.wixstatic.com/media/756a6a_da52fb55ba344f6382055c1308c97eba~mv2.png" 
+              alt="Company Logo" 
+              className="h-10 w-auto object-contain rounded-sm"
+            />
+            <div className="border-l border-slate-200 pl-4 h-8 flex flex-col justify-center">
+              <h1 className="text-xl font-bold tracking-tight text-slate-900 leading-none">ERP Tracker</h1>
+              <p className="text-[10px] text-slate-500 font-medium leading-none mt-1">
                 Implementation Dashboard 
-                <span className="text-indigo-600 font-semibold">• Part of (MG Tools)</span>
+                <span className="text-indigo-600 font-semibold"> • Part of (MG Tools)</span>
               </p>
             </div>
           </div>
